@@ -9,7 +9,7 @@ ROADMAP:
 0.11 - Show up a mosaic of images from the chosen folder - done (first page only)
 		Move through pages - done
 		Added status strip
-0.12 - Choose an image and show it fullscreen
+0.12 - Choose an image and show it fullscreen - done
 0.121 - Choose several display styles from wallpaper stretch styles
 0.2 - Show three random images to choose for next wallpaper
 0.21 - Keep track of past wallpapers

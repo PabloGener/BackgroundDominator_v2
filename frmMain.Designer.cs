@@ -54,6 +54,7 @@
             this.cmdAvPag = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tlsStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreviews1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreviews2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreviews3)).BeginInit();
@@ -106,6 +107,7 @@
             this.pbPreviews1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews1.TabIndex = 2;
             this.pbPreviews1.TabStop = false;
+            this.pbPreviews1.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews2
             // 
@@ -115,6 +117,7 @@
             this.pbPreviews2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews2.TabIndex = 3;
             this.pbPreviews2.TabStop = false;
+            this.pbPreviews2.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews3
             // 
@@ -124,6 +127,7 @@
             this.pbPreviews3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews3.TabIndex = 4;
             this.pbPreviews3.TabStop = false;
+            this.pbPreviews3.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews4
             // 
@@ -133,6 +137,7 @@
             this.pbPreviews4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews4.TabIndex = 5;
             this.pbPreviews4.TabStop = false;
+            this.pbPreviews4.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews5
             // 
@@ -142,6 +147,7 @@
             this.pbPreviews5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews5.TabIndex = 6;
             this.pbPreviews5.TabStop = false;
+            this.pbPreviews5.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews10
             // 
@@ -151,6 +157,7 @@
             this.pbPreviews10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews10.TabIndex = 11;
             this.pbPreviews10.TabStop = false;
+            this.pbPreviews10.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews9
             // 
@@ -160,6 +167,7 @@
             this.pbPreviews9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews9.TabIndex = 10;
             this.pbPreviews9.TabStop = false;
+            this.pbPreviews9.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews8
             // 
@@ -169,6 +177,7 @@
             this.pbPreviews8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews8.TabIndex = 9;
             this.pbPreviews8.TabStop = false;
+            this.pbPreviews8.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews7
             // 
@@ -178,6 +187,7 @@
             this.pbPreviews7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews7.TabIndex = 8;
             this.pbPreviews7.TabStop = false;
+            this.pbPreviews7.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews6
             // 
@@ -187,6 +197,7 @@
             this.pbPreviews6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews6.TabIndex = 7;
             this.pbPreviews6.TabStop = false;
+            this.pbPreviews6.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews15
             // 
@@ -196,6 +207,7 @@
             this.pbPreviews15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews15.TabIndex = 16;
             this.pbPreviews15.TabStop = false;
+            this.pbPreviews15.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews14
             // 
@@ -205,6 +217,7 @@
             this.pbPreviews14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews14.TabIndex = 15;
             this.pbPreviews14.TabStop = false;
+            this.pbPreviews14.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews13
             // 
@@ -214,6 +227,7 @@
             this.pbPreviews13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews13.TabIndex = 14;
             this.pbPreviews13.TabStop = false;
+            this.pbPreviews13.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews12
             // 
@@ -223,6 +237,7 @@
             this.pbPreviews12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews12.TabIndex = 13;
             this.pbPreviews12.TabStop = false;
+            this.pbPreviews12.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews11
             // 
@@ -232,6 +247,7 @@
             this.pbPreviews11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews11.TabIndex = 12;
             this.pbPreviews11.TabStop = false;
+            this.pbPreviews11.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews20
             // 
@@ -241,6 +257,7 @@
             this.pbPreviews20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews20.TabIndex = 21;
             this.pbPreviews20.TabStop = false;
+            this.pbPreviews20.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews19
             // 
@@ -250,6 +267,7 @@
             this.pbPreviews19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews19.TabIndex = 20;
             this.pbPreviews19.TabStop = false;
+            this.pbPreviews19.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews18
             // 
@@ -259,6 +277,7 @@
             this.pbPreviews18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews18.TabIndex = 19;
             this.pbPreviews18.TabStop = false;
+            this.pbPreviews18.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews17
             // 
@@ -268,6 +287,7 @@
             this.pbPreviews17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews17.TabIndex = 18;
             this.pbPreviews17.TabStop = false;
+            this.pbPreviews17.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // pbPreviews16
             // 
@@ -277,6 +297,7 @@
             this.pbPreviews16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPreviews16.TabIndex = 17;
             this.pbPreviews16.TabStop = false;
+            this.pbPreviews16.Click += new System.EventHandler(this.Ver_FullScreen);
             // 
             // cmdRePag
             // 
@@ -318,12 +339,23 @@
             this.tlsStatus.Size = new System.Drawing.Size(118, 17);
             this.tlsStatus.Text = "toolStripStatusLabel1";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, -1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmMain
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 487);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.cmdAvPag);
             this.Controls.Add(this.cmdRePag);
@@ -408,6 +440,7 @@
         private System.Windows.Forms.Button cmdAvPag;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tlsStatus;
+        private System.Windows.Forms.Button button1;
     }
 }
 

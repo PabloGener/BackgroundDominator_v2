@@ -17,7 +17,7 @@ namespace BackgroundDominator_v2
     {
         List<string> strImagenes = new List<string>();
         int cPagina, cantPag;
-
+        string strFullScreen;
 
         public frmMain()
         {
@@ -101,12 +101,14 @@ namespace BackgroundDominator_v2
                 {
                     pbActual.Image.Dispose();
                     pbActual.Image = null;
+                    pbActual.Tag = "";
                     pbActual.Refresh();
                 }
                 if (cActual < cFin)
                 {
                     
                     pbActual.Image = Image.FromFile(strImagenes[cActual]);
+                    pbActual.Tag = strImagenes[cActual];
                     cActual++;
                 }
             }
@@ -125,6 +127,12 @@ namespace BackgroundDominator_v2
             Cargar_Pagina();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form pantalla_completa = new frmFullScreen();
+            pantalla_completa.Show();
+        }
+
         private void cmdAvPag_Click(object sender, EventArgs e)
         {
             if (cPagina < cantPag)
@@ -136,6 +144,19 @@ namespace BackgroundDominator_v2
             if(cPagina == cantPag) { cmdAvPag.Enabled = false; }
 
             Cargar_Pagina();
+        }
+
+
+
+        private void Ver_FullScreen(object sender, EventArgs e)
+        {
+            PictureBox cPBPreview = (PictureBox)sender;
+            Form pantalla_completa = new frmFullScreen();
+            foreach (PictureBox pbPC in pantalla_completa.Controls.OfType<PictureBox>())
+            {
+                pbPC.Image = Image.FromFile(cPBPreview.Tag.ToString());
+            }
+            pantalla_completa.Show();
         }
     }
 }
