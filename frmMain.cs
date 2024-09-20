@@ -73,6 +73,8 @@ namespace BackgroundDominator_v2
 
             if (strImagenes.Count > 0) 
             {
+                Properties.Settings.Default.UltimaCarpeta = txtCarpeta.Text;
+                Properties.Settings.Default.Save();
                 cPagina = 1;
                 cantPag = strImagenes.Count / 20;
                 if(strImagenes.Count % 20 > 0) { cantPag++; }
@@ -141,7 +143,53 @@ namespace BackgroundDominator_v2
             Cargar_Pagina();
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.UltimaCarpeta != "")
+            {
+                txtCarpeta.Text = Properties.Settings.Default.UltimaCarpeta;
+                Leer_Carpeta();
+            }
+        }
 
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Space)
+            {
+                generarRandoms();
+            }
+        }
+
+        private void cmdStretch_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            Cambiador.cambiarFondo(pb.Tag.ToString());
+            Cambiador.Estilos(2);
+        }
+
+        private void cmdCenter_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            Cambiador.cambiarFondo(pb.Tag.ToString());
+            Cambiador.Estilos(1);
+        }
+
+        private void cmdTile_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            Cambiador.cambiarFondo(pb.Tag.ToString());
+            Cambiador.Estilos(0);
+        }
+
+        private void cmdCloseRandoms_Click(object sender, EventArgs e)
+        {
+            gpThreeRandoms.Visible = false;
+        }
+
+        private void btnReloadRandom_Click(object sender, EventArgs e)
+        {
+            generarRandoms();
+        }
 
         private void Ver_FullScreen(object sender, EventArgs e)
         {
@@ -153,6 +201,27 @@ namespace BackgroundDominator_v2
                 pbPC.Tag = cPBPreview.Tag.ToString();
             }
             pantalla_completa.Show();
+        }
+
+        private void generarRandoms()
+        {
+            gpThreeRandoms.Visible = true;
+            //SHOW THREE RANDOM IMAGES
+            var rd = new Random();
+            int r1, r2, r3;
+            r1 = rd.Next(1, strImagenes.Count);
+            r2 = rd.Next(1, strImagenes.Count);
+            r3 = rd.Next(1, strImagenes.Count);
+
+
+            rbtnRandom1.BackgroundImage = Image.FromFile(strImagenes[r1]);
+            rbtnRandom1.Tag = strImagenes[r1];
+
+            rbtnRandom2.BackgroundImage = Image.FromFile(strImagenes[r2]);
+            rbtnRandom2.Tag = strImagenes[r2];
+
+            rbtnRandom3.BackgroundImage = Image.FromFile(strImagenes[r3]);
+            rbtnRandom3.Tag = strImagenes[r3];
         }
     }
 }

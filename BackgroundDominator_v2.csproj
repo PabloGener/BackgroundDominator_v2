@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cambiador.cs" />
     <Compile Include="frmFullScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BackgroundDominator_v2 roadmap.txt" />
+    <None Include="img\reload-sm.png" />
+    <None Include="img\reload.png" />
+    <None Include="img\cancel-presentation-outline.png" />
     <None Include="img\tile.png" />
     <None Include="img\stretch.png" />
     <None Include="img\center.png" />
