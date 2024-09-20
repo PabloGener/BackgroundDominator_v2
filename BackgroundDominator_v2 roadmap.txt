@@ -10,7 +10,10 @@ ROADMAP:
 		Move through pages - done
 		Added status strip
 0.12 - Choose an image and show it fullscreen - done
+		Added: buttons group to set as background
 0.121 - Choose several display styles from wallpaper stretch styles
+		Done. Sets wallpaper
+0.13 - Remember last folder, save changed folder
 0.2 - Show three random images to choose for next wallpaper
 0.21 - Keep track of past wallpapers
 0.22 - Randomize unchosen wallpapers

@@ -127,11 +127,6 @@ namespace BackgroundDominator_v2
             Cargar_Pagina();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form pantalla_completa = new frmFullScreen();
-            pantalla_completa.Show();
-        }
 
         private void cmdAvPag_Click(object sender, EventArgs e)
         {
@@ -155,6 +150,7 @@ namespace BackgroundDominator_v2
             foreach (PictureBox pbPC in pantalla_completa.Controls.OfType<PictureBox>())
             {
                 pbPC.Image = Image.FromFile(cPBPreview.Tag.ToString());
+                pbPC.Tag = cPBPreview.Tag.ToString();
             }
             pantalla_completa.Show();
         }
