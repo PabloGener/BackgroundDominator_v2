@@ -1,0 +1,15 @@
+BACKGROUND DOMINATOR V2
+(CC) 2024 - pablogener@hotmail.com
+-----------------------------------
+
+ROADMAP:
+0.1 - Select a folder and load up file names in a list - done
+		Can drag-and-drop folders in textbox
+		-> only folders!!
+0.11 - Show up a mosaic of images from the chosen folder
+0.12 - Choose an image and show it fullscreen
+0.121 - Choose several display styles from wallpaper stretch styles
+0.2 - Show three random images to choose for next wallpaper
+0.21 - Keep track of past wallpapers
+0.22 - Randomize unchosen wallpapers
+0.23 - List past wallpapers by amount of chosen times
