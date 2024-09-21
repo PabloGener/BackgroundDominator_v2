@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BackgroundDominator_v2
@@ -16,6 +18,8 @@ namespace BackgroundDominator_v2
     public partial class frmMain : Form
     {
         List<string> strImagenes = new List<string>();
+        
+
         int cPagina, cantPag;
         string strFullScreen;
 
@@ -149,6 +153,8 @@ namespace BackgroundDominator_v2
             {
                 txtCarpeta.Text = Properties.Settings.Default.UltimaCarpeta;
                 Leer_Carpeta();
+
+                CargarUsados();
             }
         }
 
@@ -160,26 +166,25 @@ namespace BackgroundDominator_v2
             }
         }
 
-        private void cmdStretch_Click(object sender, EventArgs e)
+        private void cmdCambiar_Click(object sender, EventArgs e)
         {
-            PictureBox pb = (PictureBox)sender;
-            Cambiador.cambiarFondo(pb.Tag.ToString());
-            Cambiador.Estilos(2);
+            System.Windows.Forms.Button cEstilo = (System.Windows.Forms.Button)sender;
+
+            string nBG = "";
+            if(rbtnRandom1.Checked) { nBG = rbtnRandom1.Tag.ToString(); } else
+                if (rbtnRandom2.Checked) { nBG = rbtnRandom2.Tag.ToString(); } else
+                    if(rbtnRandom3.Checked) { nBG =rbtnRandom3.Tag.ToString(); }
+
+            int res = Cambiador.cambiarFondo(nBG);
+            Cambiador.Estilos(int.Parse(cEstilo.Tag.ToString()));
+
+            if(res > 0)
+            {
+                Cambiador.ActualizarUsados(nBG);
+            }
         }
 
-        private void cmdCenter_Click(object sender, EventArgs e)
-        {
-            PictureBox pb = (PictureBox)sender;
-            Cambiador.cambiarFondo(pb.Tag.ToString());
-            Cambiador.Estilos(1);
-        }
-
-        private void cmdTile_Click(object sender, EventArgs e)
-        {
-            PictureBox pb = (PictureBox)sender;
-            Cambiador.cambiarFondo(pb.Tag.ToString());
-            Cambiador.Estilos(0);
-        }
+        
 
         private void cmdCloseRandoms_Click(object sender, EventArgs e)
         {
@@ -201,6 +206,55 @@ namespace BackgroundDominator_v2
                 pbPC.Tag = cPBPreview.Tag.ToString();
             }
             pantalla_completa.Show();
+        }
+
+
+
+        
+
+        private void GuardarUsados()
+        {
+            //guardar la lista de usados
+            if (Program.strUsados.Count > 0)
+            {
+                //guardar las rutas de los archivos usados
+                File.WriteAllLines("Usados.txt", Program.strUsados);
+                //guardar las veces que se uso cada uno
+                //....
+                using (StreamWriter sw = File.CreateText("Veces.txt"))
+                {
+                    foreach (int aVeces in Program.intVeces)
+                    {
+                        sw.WriteLine(aVeces.ToString());
+                    }
+                }
+
+            }
+
+        }
+
+        private void CargarUsados()
+        {
+            //cargar la lista de usados
+            if (File.Exists("Usados.txt"))
+            {
+                if (Program.strUsados.Count > 0) { Program.strUsados.Clear(); }
+                var filUsados = File.ReadAllLines("Usados.txt");
+                Program.strUsados = new List<string>(filUsados);
+
+                if (Program.intVeces.Count > 0) { Program.intVeces.Clear(); }
+                var filVeces = File.ReadAllLines("Veces.txt");
+                List<string> strTemp = new List<string>(filVeces);
+                foreach (string vez in strTemp)
+                {
+                    Program.intVeces.Add(int.Parse(vez));
+                }
+            }
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GuardarUsados();
         }
 
         private void generarRandoms()

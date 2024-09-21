@@ -22,10 +22,12 @@ namespace BackgroundDominator_v2
         public const int Tiled = 1;
         public const int Stretched = 2;
 
-        public static void cambiarFondo(String nRuta)
+        public static int cambiarFondo(String nRuta)
         {
-            SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, nRuta,
+            int resultado = SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, nRuta,
                 SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
+
+            return resultado;
         }
         public static void Estilos(int estilo)
         {
@@ -58,5 +60,25 @@ namespace BackgroundDominator_v2
 
             }
         }
+
+        public static void ActualizarUsados(string aUsado)
+        {
+            bool reUsado = false;
+            for (int i = 0; i < Program.strUsados.Count; i++)
+            {
+                if (Program.strUsados[i] == aUsado)
+                {
+                    Program.intVeces[i]++;
+                    reUsado = true;
+                }
+            }
+            if (!reUsado)
+            {
+                Program.strUsados.Add(aUsado);
+                Program.intVeces.Add(1);
+
+            }
+        }
+
     }
 }

@@ -50,16 +50,19 @@ namespace BackgroundDominator_v2
         {
             Cambiador.cambiarFondo(pbFullscreen.Tag.ToString());
             Cambiador.Estilos(2);
+            Cambiador.ActualizarUsados(pbFullscreen.Tag.ToString());
         }
         private void cmdCenter_Click(object sender, EventArgs e)
         {
             Cambiador.cambiarFondo(pbFullscreen.Tag.ToString());
             Cambiador.Estilos(1);
+            Cambiador.ActualizarUsados(pbFullscreen.Tag.ToString());
         }
         private void cmdTile_Click(object sender, EventArgs e)
         {
             Cambiador.cambiarFondo(pbFullscreen.Tag.ToString());
             Cambiador.Estilos(0);
+            Cambiador.ActualizarUsados(pbFullscreen.Tag.ToString());
         }
 
 

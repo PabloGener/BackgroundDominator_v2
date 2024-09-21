@@ -10,6 +10,8 @@ namespace BackgroundDominator_v2
 {
     internal static class Program
     {
+        public static List<string> strUsados = new List<string>();
+        public static List<int> intVeces = new List<int>();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

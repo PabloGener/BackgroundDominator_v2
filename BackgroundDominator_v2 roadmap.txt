@@ -17,5 +17,14 @@ ROADMAP:
 		Done. Uses Properties.Settings.Default
 0.2 - Show three random images to choose for next wallpaper - done
 0.21 - Keep track of past wallpapers
+		strUsados[]: list of past used wallpapers
+		intVeces[]: list of how many times each one was used
+		frmMain:
+			added ActualizarUsados(): adds items to both lists
+			added GuardarUsados(): flushes both lists to files "Usasdos.txt" & "Veces.txt"
+			added CargarUsados(): reads both files and populates both lists
+		to do:
+			move ActualizarUsados() to Cambiador.cs - done
+			move strUsados[] and intVeces[] to Program.cs - done
 0.22 - Randomize unchosen wallpapers
 0.23 - List past wallpapers by amount of chosen times

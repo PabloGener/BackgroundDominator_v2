@@ -148,8 +148,7 @@
             // tlsStatus
             // 
             this.tlsStatus.Name = "tlsStatus";
-            this.tlsStatus.Size = new System.Drawing.Size(118, 17);
-            this.tlsStatus.Text = "toolStripStatusLabel1";
+            this.tlsStatus.Size = new System.Drawing.Size(0, 17);
             // 
             // gpThreeRandoms
             // 
@@ -195,8 +194,9 @@
             this.cmdStretch.Name = "cmdStretch";
             this.cmdStretch.Size = new System.Drawing.Size(234, 62);
             this.cmdStretch.TabIndex = 0;
+            this.cmdStretch.Tag = "2";
             this.cmdStretch.UseVisualStyleBackColor = true;
-            this.cmdStretch.Click += new System.EventHandler(this.cmdStretch_Click);
+            this.cmdStretch.Click += new System.EventHandler(this.cmdCambiar_Click);
             // 
             // cmdCenter
             // 
@@ -206,8 +206,9 @@
             this.cmdCenter.Name = "cmdCenter";
             this.cmdCenter.Size = new System.Drawing.Size(234, 62);
             this.cmdCenter.TabIndex = 1;
+            this.cmdCenter.Tag = "1";
             this.cmdCenter.UseVisualStyleBackColor = true;
-            this.cmdCenter.Click += new System.EventHandler(this.cmdCenter_Click);
+            this.cmdCenter.Click += new System.EventHandler(this.cmdCambiar_Click);
             // 
             // cmdTile
             // 
@@ -217,8 +218,9 @@
             this.cmdTile.Name = "cmdTile";
             this.cmdTile.Size = new System.Drawing.Size(234, 62);
             this.cmdTile.TabIndex = 2;
+            this.cmdTile.Tag = "0";
             this.cmdTile.UseVisualStyleBackColor = true;
-            this.cmdTile.Click += new System.EventHandler(this.cmdTile_Click);
+            this.cmdTile.Click += new System.EventHandler(this.cmdCambiar_Click);
             // 
             // cmdCloseRandoms
             // 
@@ -525,6 +527,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Text = "Background Dominator v2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.statusStrip1.ResumeLayout(false);
